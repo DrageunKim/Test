@@ -101,16 +101,64 @@
 		D0365841299B7A54003B8D30 /* GoodRestaurantNote */ = {
 			isa = PBXGroup;
 			children = (
-				D0365888299B818B003B8D30 /* GoodRestaurantNote.entitlements */,
-				D0365842299B7A54003B8D30 /* AppDelegate.swift */,
-				D0365844299B7A54003B8D30 /* SceneDelegate.swift */,
-				D0365846299B7A54003B8D30 /* LoginViewController.swift */,
-				D036584B299B7A54003B8D30 /* Assets.xcassets */,
-				D036584D299B7A54003B8D30 /* LaunchScreen.storyboard */,
+				D036588C299BC43A003B8D30 /* Source */,
+				D036588B299BC427003B8D30 /* Resource */,
 				D0365850299B7A54003B8D30 /* Info.plist */,
 				D0365856299B7C62003B8D30 /* GoogleService-Info.plist */,
+				D0365888299B818B003B8D30 /* GoodRestaurantNote.entitlements */,
 			);
 			path = GoodRestaurantNote;
+			sourceTree = "<group>";
+		};
+		D036588B299BC427003B8D30 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D036584B299B7A54003B8D30 /* Assets.xcassets */,
+				D036584D299B7A54003B8D30 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D036588C299BC43A003B8D30 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D036588D299BC43F003B8D30 /* App */,
+				D036588F299BC448003B8D30 /* Model */,
+				D0365890299BC44D003B8D30 /* Presentation */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D036588D299BC43F003B8D30 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D0365842299B7A54003B8D30 /* AppDelegate.swift */,
+				D0365844299B7A54003B8D30 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D036588F299BC448003B8D30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0365890299BC44D003B8D30 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D0365891299BC45C003B8D30 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D0365891299BC45C003B8D30 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D0365846299B7A54003B8D30 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
