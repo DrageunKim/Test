@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FacebookLogin
+import GoogleSignIn
 
 class ViewController: UIViewController {
 
@@ -13,6 +15,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        
+        let facebookloginButton = FBLoginButton()
+        let googleButton = GIDSignInButton()
+        googleButton.center = view.center
+        view.addSubview(googleButton)
+        
+        if let token = AccessToken.current,
+           !token.isExpired {
+            // User is logged in, do work such as go to next view controller.
+        }
     }
 }
 

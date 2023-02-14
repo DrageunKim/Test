@@ -19,5 +19,38 @@
 			</array>
 		</dict>
 	</dict>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb3300826003561470</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>3300826003561470</string>
+    <key>FacebookClientToken</key>
+    <string>eb6dd67ae473fd77898a89ef00c7c6ad</string>
+    <key>FacebookDisplayName</key>
+    <string>GoodRestaurantNote</string>
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <string>TRUE</string>
+    <key>FacebookAdvertiserIDCollectionEnabled</key>
+    <string>TRUE</string>
+    
+    <key>LSApplicationQueriesSchemes</key>
+      <array>
+          <!-- 카카오톡으로 로그인 -->
+          <string>kakaokompassauth</string>
+          <!-- 카카오톡 공유 -->
+          <string>kakaolink</string>
+          <!-- 페이스북으로 로그인 -->
+          <string>fbapi</string>
+          <!-- 페이스북 공유 -->
+          <string>fb-messenger-share-api</string>
+      </array>
+    
 </dict>
 </plist>
