@@ -20,15 +20,6 @@
 		</dict>
 	</dict>
     
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb3300826003561470</string>
-            </array>
-        </dict>
-    </array>
     <key>FacebookAppID</key>
     <string>3300826003561470</string>
     <key>FacebookClientToken</key>
@@ -60,6 +51,7 @@
               <key>CFBundleURLSchemes</key>
               <array>
                   <string>com.googleusercontent.apps.1001568099429-2v4aghjchkese9a1fva3fmn9jc8phfk3</string>
+                  <string>fb3300826003561470</string>
               </array>
           </dict>
       </array>
