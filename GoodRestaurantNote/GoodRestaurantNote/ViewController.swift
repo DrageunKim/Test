@@ -18,12 +18,24 @@ class ViewController: UIViewController {
         
         let facebookloginButton = FBLoginButton()
         let googleButton = GIDSignInButton()
+        googleButton.addTarget(self, action: #selector(test), for: .touchDown)
+        googleButton.style = .standard // .wide .iconOnly
+        
         googleButton.center = view.center
         view.addSubview(googleButton)
         
         if let token = AccessToken.current,
            !token.isExpired {
             // User is logged in, do work such as go to next view controller.
+        }
+    }
+    
+    @objc
+    private func test() {
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+            guard error == nil else { return }
+            
+            // If sign in succeeded, display the app's main content View.
         }
     }
 }

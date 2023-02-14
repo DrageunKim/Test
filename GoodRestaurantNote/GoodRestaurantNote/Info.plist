@@ -22,12 +22,12 @@
     
     <key>CFBundleURLTypes</key>
     <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb3300826003561470</string>
-      </array>
-      </dict>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb3300826003561470</string>
+            </array>
+        </dict>
     </array>
     <key>FacebookAppID</key>
     <string>3300826003561470</string>
@@ -41,16 +41,28 @@
     <string>TRUE</string>
     
     <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <!-- 카카오톡으로 로그인 -->
+        <string>kakaokompassauth</string>
+        <!-- 카카오톡 공유 -->
+        <string>kakaolink</string>
+        <!-- 페이스북으로 로그인 -->
+        <string>fbapi</string>
+        <!-- 페이스북 공유 -->
+        <string>fb-messenger-share-api</string>
+    </array>
+      
+      <key>GIDClientID</key>
+      <string>1001568099429-2v4aghjchkese9a1fva3fmn9jc8phfk3.apps.googleusercontent.com</string>
+      <key>CFBundleURLTypes</key>
       <array>
-          <!-- 카카오톡으로 로그인 -->
-          <string>kakaokompassauth</string>
-          <!-- 카카오톡 공유 -->
-          <string>kakaolink</string>
-          <!-- 페이스북으로 로그인 -->
-          <string>fbapi</string>
-          <!-- 페이스북 공유 -->
-          <string>fb-messenger-share-api</string>
+          <dict>
+              <key>CFBundleURLSchemes</key>
+              <array>
+                  <string>com.googleusercontent.apps.1001568099429-2v4aghjchkese9a1fva3fmn9jc8phfk3</string>
+              </array>
+          </dict>
       </array>
-    
+      
 </dict>
 </plist>

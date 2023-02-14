@@ -15,8 +15,11 @@ import FacebookCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Firebase Init
         FirebaseApp.configure()
         
+        // GoogleSign Init
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if error != nil || user == nil {
                 // Show the app's signed-out state.
@@ -25,11 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        // Kakao Init
         KakaoSDK.initSDK(appKey: "7f3acd70a7372db03392176e63b1a511")
-//        ApplicationDelegate.shared.application(
-//            application,
-//            didFinishLaunchingWithOptions: launchOptions
-//        )
+        
+        // Facebook Init
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         
         return true
     }
