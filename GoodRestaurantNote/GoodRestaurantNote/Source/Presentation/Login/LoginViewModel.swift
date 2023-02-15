@@ -6,21 +6,41 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseAuth
+import FirebaseCore
+import KakaoSDKAuth
 import KakaoSDKUser
 import FacebookLogin
+import GoogleSignIn
 
 class LoginViewModel {
-    private enum KakaoLoginType {
-        case app
-        case wep
-    }
     
     func loginKakao(completion: @escaping () -> Void) {
         if (UserApi.isKakaoTalkLoginAvailable()) {
-            kakaoLogin(type: .app)
+            UserApi.shared.loginWithKakaoTalk { oauthToken, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                self.loginInFirebase()
+                completion()
+//                                let kakaoToken = oauthToken?.idToken
+//                                self.configureKakaoSign(token: kakaoToken)
+            }
         } else {
-            kakaoLogin(type: .wep)
+            UserApi.shared.loginWithKakaoAccount { oauthToken, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                self.loginInFirebase()
+                completion()
+//                let kakaoToken = oauthToken?.idToken
+//                self.configureKakaoSign(token: kakaoToken)
+            }
         }
     }
     
@@ -36,39 +56,52 @@ class LoginViewModel {
                 return
             }
             
-            let credential = FacebookAuthProvider.credential(
-                withAccessToken: AccessToken.current!.tokenString
-            )
-
-            Auth.auth().signIn(with: credential) { user, error in
-                if let error = error {
-                    print(error)
-                    return
+            if let current = AccessToken.current {
+                let credential = FacebookAuthProvider.credential(
+                    withAccessToken: current.tokenString
+                )
+                
+                Auth.auth().signIn(with: credential) { user, error in
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                    
+                    completion()
                 }
-
-                completion()
             }
         }
     }
     
-    private func kakaoLogin(type: KakaoLoginType) {
-        switch type {
-        case .app:
-            UserApi.shared.loginWithKakaoTalk { oauthToken, error in
+    func loginGoogle(target: UIViewController, completion: @escaping () -> Void) {
+        if let clientID = FirebaseApp.app()?.options.clientID {
+            print(clientID)
+            let config = GIDConfiguration(clientID: clientID)
+            
+            GIDSignIn.sharedInstance.signIn(withPresenting: target, hint: config.clientID) { signInResult, error in
                 if let error = error {
                     print(error)
-                } else {
-                    _ = oauthToken
-                    self.loginInFirebase()
+                    return
                 }
-            }
-        case .wep:
-            UserApi.shared.loginWithKakaoAccount { oauthToken, error in
-                if let error = error {
-                    print(error)
-                } else {
-                    _ = oauthToken
-                    self.loginInFirebase()
+                
+                guard let result = signInResult else { return }
+                
+                if let idToken = result.user.idToken?.tokenString {
+                    let accessToken = result.user.accessToken.tokenString
+                    let credential = GoogleAuthProvider.credential(
+                        withIDToken: idToken,
+                        accessToken: accessToken
+                    )
+                    
+                    
+                    Auth.auth().signIn(with: credential) { user, error in
+                        if let error = error {
+                            print(error)
+                            return
+                        }
+                        
+                        completion()
+                    }
                 }
             }
         }
@@ -78,18 +111,37 @@ class LoginViewModel {
         UserApi.shared.me() { user, error in
             if let error = error {
                 print(error)
-            } else {
-                if let userNickname = user?.kakaoAccount?.profile?.nickname,
-                   let userID = user?.id {
-                    let id = "\(userNickname)@kakaoGoodRestaurantNote.com"
-                    let password = "\(userID)dragon+GoodRestaurantNote+pw"
-                    
-                    Auth.auth().createUser(withEmail: id, password: password) { result, error in
-                        if let error = error {
-                            print(error)
-                            Auth.auth().signIn(withEmail: id, password: password)
-                        }
+                return
+            }
+            if let userNickname = user?.kakaoAccount?.profile?.nickname,
+               let userID = user?.id {
+                let id = "\(userNickname)@kakaoGoodRestaurantNote.com"
+                let password = "\(userID)dragon+GoodRestaurantNote+pw"
+                
+                Auth.auth().createUser(withEmail: id, password: password) { result, error in
+                    if let error = error {
+                        print(error)
+                        Auth.auth().signIn(withEmail: id, password: password)
+                    } else {
+                        
                     }
+                }
+            }
+        }
+    }
+    
+    private func configureKakaoSign(token: String?) {
+        if let token = token {
+            let credential = OAuthProvider.credential(
+                withProviderID: "oidc.kakao",
+                idToken: token,
+                rawNonce: nil
+            )
+            
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if let error = error {
+                    print(error)
+                    return
                 }
             }
         }

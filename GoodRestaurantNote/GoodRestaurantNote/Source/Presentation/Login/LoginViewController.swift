@@ -6,11 +6,7 @@
 //
 
 import UIKit
-import Firebase
-import FBSDKCoreKit
-import FacebookLogin
 import GoogleSignIn
-import KakaoSDKUser
 
 class LoginViewController: UIViewController {
 
@@ -54,7 +50,6 @@ class LoginViewController: UIViewController {
     }()
     private let googleLoginButton: GIDSignInButton = {
         let button = GIDSignInButton()
-        button.style = .wide
         return button
     }()
     private let introduceStackView: UIStackView = {
@@ -99,10 +94,7 @@ class LoginViewController: UIViewController {
     
     private func configureButton() {
         kakaoLoginButton.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchDown)
-        
         facebookLoginButton.addTarget(self, action: #selector(tappedFacebookLoginButton), for: .touchDown)
-        
-        googleLoginButton.style = .wide
         googleLoginButton.addTarget(self, action: #selector(tappedGoogleLoginButton), for: .touchDown)
     }
     
@@ -164,10 +156,8 @@ extension LoginViewController {
     
     @objc
     private func tappedGoogleLoginButton() {
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-            guard error == nil else { return }
-            
-            // If sign in succeeded, display the app's main content View.
+        viewModel.loginGoogle(target: self) {
+            print("구글 로그인")
         }
     }
 }
