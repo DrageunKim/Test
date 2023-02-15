@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKCoreKit
 import FacebookLogin
 import GoogleSignIn
 import KakaoSDKUser
@@ -13,6 +15,8 @@ import KakaoSDKUser
 class LoginViewController: UIViewController {
 
     // MARK: Private Properties
+    
+    private let viewModel: LoginViewModel = LoginViewModel()
     
     private let introduceTopLabel: UILabel = {
         let label = UILabel()
@@ -43,8 +47,9 @@ class LoginViewController: UIViewController {
         button.setImage(UIImage(named: "KakaoLogin.png"), for: .normal)
         return button
     }()
-    private let facebookLoginButton: FBLoginButton = {
-        let button = FBLoginButton()
+    private let facebookLoginButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .blue
         return button
     }()
     private let googleLoginButton: GIDSignInButton = {
@@ -93,10 +98,12 @@ class LoginViewController: UIViewController {
     }
     
     private func configureButton() {
-        googleLoginButton.style = .wide
-        
-        googleLoginButton.addTarget(self, action: #selector(tappedGoogleLoginButton), for: .touchDown)
         kakaoLoginButton.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchDown)
+        
+        facebookLoginButton.addTarget(self, action: #selector(tappedFacebookLoginButton), for: .touchDown)
+        
+        googleLoginButton.style = .wide
+        googleLoginButton.addTarget(self, action: #selector(tappedGoogleLoginButton), for: .touchDown)
     }
     
     private func setUpStackView() {
@@ -143,30 +150,15 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func tappedKakaoLoginButton() {
-        if (UserApi.isKakaoTalkLoginAvailable()) {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("loginWithKakaoTalk() success.")
-
-                    //do something
-                    _ = oauthToken
-                }
-            }
-        } else {
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("loginWithKakaoAccount() success.")
-                    
-                    //do something
-                    _ = oauthToken
-                }
-            }
+        viewModel.loginKakao {
+            print("카카오 로그인")
+        }
+    }
+    
+    @objc
+    private func tappedFacebookLoginButton() {
+        viewModel.loginFacebook {
+            print("페이스북 로그인")
         }
     }
     

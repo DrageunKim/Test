@@ -35,6 +35,8 @@
 		D0365882299B7E77003B8D30 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = D0365881299B7E77003B8D30 /* FacebookShare */; };
 		D0365885299B7EA0003B8D30 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D0365884299B7EA0003B8D30 /* GoogleSignIn */; };
 		D0365887299B7EA0003B8D30 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D0365886299B7EA0003B8D30 /* GoogleSignInSwift */; };
+		D0365893299BC490003B8D30 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365892299BC490003B8D30 /* AuthManager.swift */; };
+		D0365895299CAEC2003B8D30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365894299CAEC2003B8D30 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		D0365850299B7A54003B8D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0365856299B7C62003B8D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0365888299B818B003B8D30 /* GoodRestaurantNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoodRestaurantNote.entitlements; sourceTree = "<group>"; };
+		D0365892299BC490003B8D30 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		D0365894299CAEC2003B8D30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 		D036588F299BC448003B8D30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0365892299BC490003B8D30 /* AuthManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				D0365846299B7A54003B8D30 /* LoginViewController.swift */,
+				D0365894299CAEC2003B8D30 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0365847299B7A54003B8D30 /* LoginViewController.swift in Sources */,
+				D0365893299BC490003B8D30 /* AuthManager.swift in Sources */,
 				D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */,
+				D0365895299CAEC2003B8D30 /* LoginViewModel.swift in Sources */,
 				D0365845299B7A54003B8D30 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
