@@ -75,7 +75,7 @@ extension ListViewController: UITableViewDelegate {}
 extension ListViewController {
     @objc
     private func tappedAddButton() {
-        let pushViewController = DetailViewController()
+        let pushViewController = DetailViewController(mode: .create)
         
         navigationController?.pushViewController(pushViewController, animated: true)
     }
@@ -96,11 +96,11 @@ extension ListViewController {
             addButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor),
             addButton.trailingAnchor.constraint(
-                equalTo: view.trailingAnchor,
+                equalTo: safeArea.trailingAnchor,
                 constant: view.frame.width * -0.1
             ),
             addButton.bottomAnchor.constraint(
-                equalTo: view.bottomAnchor,
+                equalTo: safeArea.bottomAnchor,
                 constant: view.frame.height * -0.1
             ),
             tableView.leadingAnchor.constraint(

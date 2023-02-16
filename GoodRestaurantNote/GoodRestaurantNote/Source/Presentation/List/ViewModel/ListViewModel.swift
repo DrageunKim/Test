@@ -8,6 +8,7 @@
 import UIKit
 
 class ListViewModel {
+    
     var dataList: [Restaurant] = [Restaurant(
         visitDate: Date(),
         visitRecord: [Date()],

@@ -99,7 +99,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func tappedNonMemberLoginButton() {
-        let pushViewController = ListViewController()
+        let pushViewController = CustomTabBarController()
         
         self.navigationController?.pushViewController(pushViewController, animated: true)
     }
@@ -107,7 +107,7 @@ extension LoginViewController {
     @objc
     private func tappedKakaoLoginButton() {
         viewModel.loginKakao {
-            let pushViewController = ListViewController()
+            let pushViewController = CustomTabBarController()
             
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
@@ -116,7 +116,7 @@ extension LoginViewController {
     @objc
     private func tappedFacebookLoginButton() {
         viewModel.loginFacebook {
-            let pushViewController = ListViewController()
+            let pushViewController = CustomTabBarController()
             
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
@@ -125,7 +125,7 @@ extension LoginViewController {
     @objc
     private func tappedGoogleLoginButton() {
         viewModel.loginGoogle(target: self) {
-            let pushViewController = ListViewController()
+            let pushViewController = CustomTabBarController()
             
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
@@ -138,7 +138,7 @@ extension LoginViewController {
     private func configureView() {
         view.backgroundColor = .systemBackground
         
-        navigationItem.title = "계정 로그인"
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func configureStackView() {
