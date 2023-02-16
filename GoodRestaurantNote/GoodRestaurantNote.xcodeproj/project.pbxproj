@@ -16,6 +16,14 @@
 		D031DADE299E2550007BCD71 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DADD299E2550007BCD71 /* DetailViewController.swift */; };
 		D031DAE2299E3A64007BCD71 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAE1299E3A64007BCD71 /* Mode.swift */; };
 		D031DB0B299E9171007BCD71 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB0A299E9171007BCD71 /* CustomTabBarController.swift */; };
+		D031DB10299E9866007BCD71 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB0F299E9866007BCD71 /* ChatViewController.swift */; };
+		D031DB13299E98DF007BCD71 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB12299E98DF007BCD71 /* ChatTableViewCell.swift */; };
+		D031DB15299E9903007BCD71 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB14299E9903007BCD71 /* RecordTableViewCell.swift */; };
+		D031DB17299E9911007BCD71 /* CommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB16299E9911007BCD71 /* CommunityTableViewCell.swift */; };
+		D031DB19299E991A007BCD71 /* ETCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB18299E991A007BCD71 /* ETCTableViewCell.swift */; };
+		D031DB1D299E9974007BCD71 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB1C299E9974007BCD71 /* RecordViewController.swift */; };
+		D031DB1F299E998D007BCD71 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB1E299E998D007BCD71 /* CommunityViewController.swift */; };
+		D031DB21299E999D007BCD71 /* ETCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB20299E999D007BCD71 /* ETCViewController.swift */; };
 		D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365842299B7A54003B8D30 /* AppDelegate.swift */; };
 		D0365845299B7A54003B8D30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365844299B7A54003B8D30 /* SceneDelegate.swift */; };
 		D0365847299B7A54003B8D30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365846299B7A54003B8D30 /* LoginViewController.swift */; };
@@ -57,6 +65,14 @@
 		D031DADD299E2550007BCD71 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D031DAE1299E3A64007BCD71 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		D031DB0A299E9171007BCD71 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		D031DB0F299E9866007BCD71 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D031DB12299E98DF007BCD71 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		D031DB14299E9903007BCD71 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		D031DB16299E9911007BCD71 /* CommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewCell.swift; sourceTree = "<group>"; };
+		D031DB18299E991A007BCD71 /* ETCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCTableViewCell.swift; sourceTree = "<group>"; };
+		D031DB1C299E9974007BCD71 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		D031DB1E299E998D007BCD71 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		D031DB20299E999D007BCD71 /* ETCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCViewController.swift; sourceTree = "<group>"; };
 		D036583F299B7A54003B8D30 /* GoodRestaurantNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodRestaurantNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0365842299B7A54003B8D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0365844299B7A54003B8D30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +121,7 @@
 		D031DACC299DEA8F007BCD71 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				D031DADC299E251B007BCD71 /* Detail */,
 				D031DAD7299DFDFD007BCD71 /* ViewModel */,
 				D031DACD299DEAAE007BCD71 /* ListViewController.swift */,
 				D031DACF299DEB93007BCD71 /* ListTableViewCell.swift */,
@@ -148,8 +165,49 @@
 			isa = PBXGroup;
 			children = (
 				D031DB0A299E9171007BCD71 /* CustomTabBarController.swift */,
+				D031DACC299DEA8F007BCD71 /* List */,
+				D031DB0D299E9768007BCD71 /* Record */,
+				D031DB11299E9876007BCD71 /* Community */,
+				D031DB0E299E9799007BCD71 /* Chat */,
+				D031DB0C299E9756007BCD71 /* ETC */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D031DB0C299E9756007BCD71 /* ETC */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB20299E999D007BCD71 /* ETCViewController.swift */,
+				D031DB18299E991A007BCD71 /* ETCTableViewCell.swift */,
+			);
+			path = ETC;
+			sourceTree = "<group>";
+		};
+		D031DB0D299E9768007BCD71 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB1C299E9974007BCD71 /* RecordViewController.swift */,
+				D031DB14299E9903007BCD71 /* RecordTableViewCell.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		D031DB0E299E9799007BCD71 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB0F299E9866007BCD71 /* ChatViewController.swift */,
+				D031DB12299E98DF007BCD71 /* ChatTableViewCell.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		D031DB11299E9876007BCD71 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB1E299E998D007BCD71 /* CommunityViewController.swift */,
+				D031DB16299E9911007BCD71 /* CommunityTableViewCell.swift */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 		D0365836299B7A54003B8D30 = {
@@ -222,10 +280,8 @@
 		D0365890299BC44D003B8D30 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D031DB09299E9146007BCD71 /* TabBar */,
 				D0365891299BC45C003B8D30 /* Login */,
-				D031DACC299DEA8F007BCD71 /* List */,
-				D031DADC299E251B007BCD71 /* Detail */,
+				D031DB09299E9146007BCD71 /* TabBar */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -346,11 +402,19 @@
 				D031DADE299E2550007BCD71 /* DetailViewController.swift in Sources */,
 				D031DACE299DEAAE007BCD71 /* ListViewController.swift in Sources */,
 				D031DAD6299DF761007BCD71 /* Score.swift in Sources */,
+				D031DB1D299E9974007BCD71 /* RecordViewController.swift in Sources */,
+				D031DB15299E9903007BCD71 /* RecordTableViewCell.swift in Sources */,
+				D031DB1F299E998D007BCD71 /* CommunityViewController.swift in Sources */,
 				D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */,
 				D031DAD2299DEBEE007BCD71 /* Identifiable.swift in Sources */,
 				D0365895299CAEC2003B8D30 /* LoginViewModel.swift in Sources */,
+				D031DB19299E991A007BCD71 /* ETCTableViewCell.swift in Sources */,
 				D0365845299B7A54003B8D30 /* SceneDelegate.swift in Sources */,
+				D031DB17299E9911007BCD71 /* CommunityTableViewCell.swift in Sources */,
+				D031DB10299E9866007BCD71 /* ChatViewController.swift in Sources */,
+				D031DB21299E999D007BCD71 /* ETCViewController.swift in Sources */,
 				D031DB0B299E9171007BCD71 /* CustomTabBarController.swift in Sources */,
+				D031DB13299E98DF007BCD71 /* ChatTableViewCell.swift in Sources */,
 				D031DAD4299DEF4D007BCD71 /* Restaurant.swift in Sources */,
 				D031DAD9299DFE0E007BCD71 /* ListViewModel.swift in Sources */,
 			);

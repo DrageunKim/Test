@@ -9,19 +9,40 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
 
-    private let firstViewController: UIViewController = {
-        let firstVC = UINavigationController(rootViewController: ListViewController())
-        firstVC.tabBarItem.selectedImage = .checkmark
-        firstVC.tabBarItem.title = "동네대전"
-        firstVC.tabBarItem.image = .remove
-        return firstVC
+    private let homeViewController: UIViewController = {
+        let viewController = UINavigationController(rootViewController: ListViewController())
+        viewController.view.backgroundColor = .systemBackground
+        viewController.tabBarItem.title = "동네대전"
+        viewController.tabBarItem.image = UIImage(systemName: "flag.filled.and.flag.crossed")
+        return viewController
     }()
-    private let testViewController: UIViewController = {
-        let dummyView = UIViewController()
-        dummyView.view.backgroundColor = .yellow
-        dummyView.tabBarItem.title = "Yellow Dummy"
-        dummyView.tabBarItem.image = UIImage(systemName: "trash.fill")
-        return dummyView
+    private let chatViewController: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .systemBackground
+        viewController.tabBarItem.title = "채팅"
+        viewController.tabBarItem.image = UIImage(systemName: "message")
+        return viewController
+    }()
+    private let communityViewController: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .systemBackground
+        viewController.tabBarItem.title = "커뮤니티"
+        viewController.tabBarItem.image = UIImage(systemName: "tray")
+        return viewController
+    }()
+    private let recordViewController: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .systemBackground
+        viewController.tabBarItem.title = "대전기록"
+        viewController.tabBarItem.image = UIImage(systemName: "highlighter")
+        return viewController
+    }()
+    private let etcViewController: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .systemBackground
+        viewController.tabBarItem.title = "설정"
+        viewController.tabBarItem.image = UIImage(systemName: "person.crop.circle")
+        return viewController
     }()
     
     override func viewDidLoad() {
@@ -31,9 +52,15 @@ class CustomTabBarController: UITabBarController {
     }
     
     private func configureTabBar() {
-        tabBar.tintColor = .red
-        tabBar.unselectedItemTintColor = .blue
+        tabBar.tintColor = .systemMint
+        tabBar.unselectedItemTintColor = .label
         
-        viewControllers = [firstViewController, testViewController]
+        viewControllers = [
+            homeViewController,
+            chatViewController,
+            communityViewController,
+            recordViewController,
+            etcViewController
+        ]
     }
 }
