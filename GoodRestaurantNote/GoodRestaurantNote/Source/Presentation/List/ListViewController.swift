@@ -9,10 +9,7 @@ import UIKit
 
 class ListViewController: UIViewController {
     
-    typealias DataSource = UITableViewDiffableDataSource<Score, Restaurant>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Score, Restaurant>
-    
-    private lazy var dataSource = configureDataSource()
+    private let viewModel = ListViewModel()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -29,11 +26,13 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
+        configureDelegate()
         configureLayout()
     }
     
     private func configureDelegate() {
         tableView.delegate = self
+        tableView.dataSource = self
     }
     
     private func configureView() {
@@ -46,38 +45,32 @@ class ListViewController: UIViewController {
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: view.frame.width * 0.03),
+            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: view.frame.width * -0.03),
             tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
     }
 }
 
-extension ListViewController {
-    private func configureDataSource() -> DataSource {
-        let dataSource = DataSource(
-            tableView: tableView,
-            cellProvider: { tableView, indexPath, itemIdentifier in
-                guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: ListTableViewCell.identifier,
-                    for: indexPath
-                ) as? ListTableViewCell else {
-                    return UITableViewCell()
-                }
-                
-                return cell
-            })
-        return dataSource
+extension ListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.dataList.count
     }
     
-    private func configureSnapshot(data: [Restaurant], animation: Bool) {
-        var snapshot = Snapshot()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ListTableViewCell.identifier,
+            for: indexPath
+        ) as? ListTableViewCell else {
+            return UITableViewCell()
+        }
         
-        snapshot.appendSections([.good])
-        snapshot.appendItems(data)
+        let data = viewModel.dataList[indexPath.row]
         
-        dataSource.apply(snapshot, animatingDifferences: animation)
+        cell.configureLabel(data: data)
+        
+        return cell
     }
 }
 

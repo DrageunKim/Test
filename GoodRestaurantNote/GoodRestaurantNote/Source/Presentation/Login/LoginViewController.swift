@@ -93,6 +93,7 @@ class LoginViewController: UIViewController {
     }
     
     private func configureButton() {
+        nonMemberLoginButton.addTarget(self, action: #selector(tappedNonMemberLoginButton), for: .touchDown)
         kakaoLoginButton.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchDown)
         facebookLoginButton.addTarget(self, action: #selector(tappedFacebookLoginButton), for: .touchDown)
         googleLoginButton.addTarget(self, action: #selector(tappedGoogleLoginButton), for: .touchDown)
@@ -140,6 +141,13 @@ class LoginViewController: UIViewController {
 // MARK: - Action Methods
 
 extension LoginViewController {
+    @objc
+    private func tappedNonMemberLoginButton() {
+        let pushViewController = ListViewController()
+        
+        self.navigationController?.pushViewController(pushViewController, animated: true)
+    }
+    
     @objc
     private func tappedKakaoLoginButton() {
         viewModel.loginKakao {
