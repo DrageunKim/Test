@@ -13,6 +13,7 @@
 		D031DAD4299DEF4D007BCD71 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD3299DEF4D007BCD71 /* Restaurant.swift */; };
 		D031DAD6299DF761007BCD71 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD5299DF761007BCD71 /* Score.swift */; };
 		D031DAD9299DFE0E007BCD71 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD8299DFE0E007BCD71 /* ListViewModel.swift */; };
+		D031DADE299E2550007BCD71 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DADD299E2550007BCD71 /* DetailViewController.swift */; };
 		D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365842299B7A54003B8D30 /* AppDelegate.swift */; };
 		D0365845299B7A54003B8D30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365844299B7A54003B8D30 /* SceneDelegate.swift */; };
 		D0365847299B7A54003B8D30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365846299B7A54003B8D30 /* LoginViewController.swift */; };
@@ -41,7 +42,6 @@
 		D0365882299B7E77003B8D30 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = D0365881299B7E77003B8D30 /* FacebookShare */; };
 		D0365885299B7EA0003B8D30 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D0365884299B7EA0003B8D30 /* GoogleSignIn */; };
 		D0365887299B7EA0003B8D30 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D0365886299B7EA0003B8D30 /* GoogleSignInSwift */; };
-		D0365893299BC490003B8D30 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365892299BC490003B8D30 /* AuthManager.swift */; };
 		D0365895299CAEC2003B8D30 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365894299CAEC2003B8D30 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +52,7 @@
 		D031DAD3299DEF4D007BCD71 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		D031DAD5299DF761007BCD71 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		D031DAD8299DFE0E007BCD71 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		D031DADD299E2550007BCD71 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D036583F299B7A54003B8D30 /* GoodRestaurantNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodRestaurantNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0365842299B7A54003B8D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0365844299B7A54003B8D30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		D0365850299B7A54003B8D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0365856299B7C62003B8D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0365888299B818B003B8D30 /* GoodRestaurantNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoodRestaurantNote.entitlements; sourceTree = "<group>"; };
-		D0365892299BC490003B8D30 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D0365894299CAEC2003B8D30 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +112,30 @@
 			isa = PBXGroup;
 			children = (
 				D031DAD8299DFE0E007BCD71 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D031DADC299E251B007BCD71 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D031DAE0299E27FB007BCD71 /* ViewModel */,
+				D031DADD299E2550007BCD71 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D031DADF299E27F2007BCD71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0365894299CAEC2003B8D30 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D031DAE0299E27FB007BCD71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,7 +199,6 @@
 		D036588F299BC448003B8D30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D0365892299BC490003B8D30 /* AuthManager.swift */,
 				D031DAD1299DEBEE007BCD71 /* Identifiable.swift */,
 				D031DAD3299DEF4D007BCD71 /* Restaurant.swift */,
 				D031DAD5299DF761007BCD71 /* Score.swift */,
@@ -188,6 +211,7 @@
 			children = (
 				D0365891299BC45C003B8D30 /* Login */,
 				D031DACC299DEA8F007BCD71 /* List */,
+				D031DADC299E251B007BCD71 /* Detail */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -195,8 +219,8 @@
 		D0365891299BC45C003B8D30 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D031DADF299E27F2007BCD71 /* ViewModel */,
 				D0365846299B7A54003B8D30 /* LoginViewController.swift */,
-				D0365894299CAEC2003B8D30 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -304,7 +328,7 @@
 			files = (
 				D031DAD0299DEB93007BCD71 /* ListTableViewCell.swift in Sources */,
 				D0365847299B7A54003B8D30 /* LoginViewController.swift in Sources */,
-				D0365893299BC490003B8D30 /* AuthManager.swift in Sources */,
+				D031DADE299E2550007BCD71 /* DetailViewController.swift in Sources */,
 				D031DACE299DEAAE007BCD71 /* ListViewController.swift in Sources */,
 				D031DAD6299DF761007BCD71 /* Score.swift in Sources */,
 				D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */,

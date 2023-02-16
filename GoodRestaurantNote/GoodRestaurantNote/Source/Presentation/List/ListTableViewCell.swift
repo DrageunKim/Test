@@ -63,6 +63,14 @@ class ListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        scoreLabel.text = nil
+        titleLabel.text = nil
+        visitLabel.text = nil
+        menuLabel.text = nil
+        locationLabel.text = nil
+    }
+    
     func configureLabel(data: Restaurant) {
         scoreLabel.text = data.score.description
         titleLabel.text = data.title

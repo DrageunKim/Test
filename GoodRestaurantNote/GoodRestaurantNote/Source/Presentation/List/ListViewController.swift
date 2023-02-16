@@ -21,6 +21,14 @@ class ListViewController: UIViewController {
         )
         return tableView
     }()
+    private let addButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(.add, for: .normal)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +36,11 @@ class ListViewController: UIViewController {
         configureView()
         configureDelegate()
         configureLayout()
+        configureButtonAction()
+    }
+    
+    private func configureButtonAction() {
+        addButton.addTarget(self, action: #selector(tappedAddButton), for: .touchDown)
     }
     
     private func configureDelegate() {
@@ -60,6 +73,15 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {}
 
 extension ListViewController {
+    @objc
+    private func tappedAddButton() {
+        let pushViewController = DetailViewController()
+        
+        navigationController?.pushViewController(pushViewController, animated: true)
+    }
+}
+
+extension ListViewController {
     private func configureView() {
         view.backgroundColor = .systemBackground
     }
@@ -68,10 +90,27 @@ extension ListViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         view.addSubview(tableView)
+        view.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: view.frame.width * 0.03),
-            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: view.frame.width * -0.03),
+            addButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
+            addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor),
+            addButton.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: view.frame.width * -0.1
+            ),
+            addButton.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor,
+                constant: view.frame.height * -0.1
+            ),
+            tableView.leadingAnchor.constraint(
+                equalTo: safeArea.leadingAnchor,
+                constant: view.frame.width * 0.03
+            ),
+            tableView.trailingAnchor.constraint(
+                equalTo: safeArea.trailingAnchor,
+                constant: view.frame.width * -0.03
+            ),
             tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])

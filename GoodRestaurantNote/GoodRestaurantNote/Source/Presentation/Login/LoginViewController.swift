@@ -81,12 +81,12 @@ class LoginViewController: UIViewController {
         
         configureView()
         configureLayout()
-        configureButton()
+        configureButtonAction()
     }
     
     // MARK: Private Methods
     
-    private func configureButton() {
+    private func configureButtonAction() {
         nonMemberLoginButton.addTarget(self, action: #selector(tappedNonMemberLoginButton), for: .touchDown)
         kakaoLoginButton.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchDown)
         facebookLoginButton.addTarget(self, action: #selector(tappedFacebookLoginButton), for: .touchDown)
