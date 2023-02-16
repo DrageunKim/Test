@@ -143,21 +143,27 @@ extension LoginViewController {
     @objc
     private func tappedKakaoLoginButton() {
         viewModel.loginKakao {
-            print("카카오 로그인")
+            let pushViewController = ListViewController()
+            
+            self.navigationController?.pushViewController(pushViewController, animated: true)
         }
     }
     
     @objc
     private func tappedFacebookLoginButton() {
         viewModel.loginFacebook {
-            print("페이스북 로그인")
+            let pushViewController = ListViewController()
+            
+            self.navigationController?.pushViewController(pushViewController, animated: true)
         }
     }
     
     @objc
     private func tappedGoogleLoginButton() {
         viewModel.loginGoogle(target: self) {
-            print("구글 로그인")
+            let pushViewController = ListViewController()
+            
+            self.navigationController?.pushViewController(pushViewController, animated: true)
         }
     }
 }

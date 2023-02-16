@@ -26,8 +26,6 @@ class LoginViewModel {
                 
                 self.loginInFirebase()
                 completion()
-//                                let kakaoToken = oauthToken?.idToken
-//                                self.configureKakaoSign(token: kakaoToken)
             }
         } else {
             UserApi.shared.loginWithKakaoAccount { oauthToken, error in
@@ -38,8 +36,6 @@ class LoginViewModel {
                 
                 self.loginInFirebase()
                 completion()
-//                let kakaoToken = oauthToken?.idToken
-//                self.configureKakaoSign(token: kakaoToken)
             }
         }
     }
