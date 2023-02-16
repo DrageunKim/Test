@@ -86,55 +86,11 @@ class LoginViewController: UIViewController {
     
     // MARK: Private Methods
     
-    private func configureView() {
-        view.backgroundColor = .systemBackground
-        
-        navigationItem.title = "계정 로그인"
-    }
-    
     private func configureButton() {
         nonMemberLoginButton.addTarget(self, action: #selector(tappedNonMemberLoginButton), for: .touchDown)
         kakaoLoginButton.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchDown)
         facebookLoginButton.addTarget(self, action: #selector(tappedFacebookLoginButton), for: .touchDown)
         googleLoginButton.addTarget(self, action: #selector(tappedGoogleLoginButton), for: .touchDown)
-    }
-    
-    private func setUpStackView() {
-        introduceStackView.addArrangedSubview(introduceTopLabel)
-        introduceStackView.addArrangedSubview(introduceBottomLabel)
-        
-        loginStackView.addArrangedSubview(nonMemberLoginButton)
-        loginStackView.addArrangedSubview(kakaoLoginButton)
-        loginStackView.addArrangedSubview(facebookLoginButton)
-        loginStackView.addArrangedSubview(googleLoginButton)
-    }
-    
-    private func configureLayout() {
-        setUpStackView()
-        
-        view.addSubview(introduceStackView)
-        view.addSubview(loginStackView)
-        
-        NSLayoutConstraint.activate([
-            introduceStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            introduceStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.09),
-            introduceStackView.topAnchor.constraint(
-                equalTo: view.topAnchor,
-                constant: view.frame.size.height * 0.2
-            ),
-            introduceStackView.leadingAnchor.constraint(
-                equalTo: view.leadingAnchor,
-                constant: view.frame.size.width * 0.1
-            ),
-            
-            loginStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            loginStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.32),
-            loginStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginStackView.bottomAnchor.constraint(
-                equalTo: view.bottomAnchor,
-                constant: view.frame.size.height * -0.1
-            )
-        ])
     }
 }
 
@@ -173,5 +129,65 @@ extension LoginViewController {
             
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
+    }
+}
+
+// MARK: - View & Layout Configure
+
+extension LoginViewController {
+    private func configureView() {
+        view.backgroundColor = .systemBackground
+        
+        navigationItem.title = "계정 로그인"
+    }
+    
+    private func configureStackView() {
+        introduceStackView.addArrangedSubview(introduceTopLabel)
+        introduceStackView.addArrangedSubview(introduceBottomLabel)
+        
+        loginStackView.addArrangedSubview(nonMemberLoginButton)
+        loginStackView.addArrangedSubview(kakaoLoginButton)
+        loginStackView.addArrangedSubview(facebookLoginButton)
+        loginStackView.addArrangedSubview(googleLoginButton)
+    }
+    
+    private func configureLayout() {
+        configureStackView()
+        
+        view.addSubview(introduceStackView)
+        view.addSubview(loginStackView)
+        
+        NSLayoutConstraint.activate([
+            introduceStackView.widthAnchor.constraint(
+                equalTo: view.widthAnchor,
+                multiplier: 0.5
+            ),
+            introduceStackView.heightAnchor.constraint(
+                equalTo: view.heightAnchor,
+                multiplier: 0.09
+            ),
+            introduceStackView.topAnchor.constraint(
+                equalTo: view.topAnchor,
+                constant: view.frame.size.height * 0.2
+            ),
+            introduceStackView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: view.frame.size.width * 0.1
+            ),
+            
+            loginStackView.widthAnchor.constraint(
+                equalTo: view.widthAnchor,
+                multiplier: 0.8
+            ),
+            loginStackView.heightAnchor.constraint(
+                equalTo: view.heightAnchor,
+                multiplier: 0.32
+            ),
+            loginStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginStackView.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor,
+                constant: view.frame.size.height * -0.1
+            )
+        ])
     }
 }

@@ -34,23 +34,6 @@ class ListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    private func configureView() {
-        view.backgroundColor = .systemBackground
-    }
-    
-    private func configureLayout() {
-        let safeArea = view.safeAreaLayoutGuide
-        
-        view.addSubview(tableView)
-        
-        NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: view.frame.width * 0.03),
-            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: view.frame.width * -0.03),
-            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
-        ])
-    }
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -75,3 +58,22 @@ extension ListViewController: UITableViewDataSource {
 }
 
 extension ListViewController: UITableViewDelegate {}
+
+extension ListViewController {
+    private func configureView() {
+        view.backgroundColor = .systemBackground
+    }
+    
+    private func configureLayout() {
+        let safeArea = view.safeAreaLayoutGuide
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: view.frame.width * 0.03),
+            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: view.frame.width * -0.03),
+            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+        ])
+    }
+}
