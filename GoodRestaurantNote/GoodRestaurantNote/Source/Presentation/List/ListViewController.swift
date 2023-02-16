@@ -21,14 +21,6 @@ class ListViewController: UIViewController {
         )
         return tableView
     }()
-    private let addButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(.add, for: .normal)
-        button.contentVerticalAlignment = .fill
-        button.contentHorizontalAlignment = .fill
-        return button
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +28,6 @@ class ListViewController: UIViewController {
         configureView()
         configureDelegate()
         configureLayout()
-        configureButtonAction()
-    }
-    
-    private func configureButtonAction() {
-        addButton.addTarget(self, action: #selector(tappedAddButton), for: .touchDown)
     }
     
     private func configureDelegate() {
@@ -84,25 +71,20 @@ extension ListViewController {
 extension ListViewController {
     private func configureView() {
         view.backgroundColor = .systemBackground
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(tappedAddButton)
+        )
     }
     
     private func configureLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
         view.addSubview(tableView)
-        view.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            addButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
-            addButton.heightAnchor.constraint(equalTo: addButton.widthAnchor),
-            addButton.trailingAnchor.constraint(
-                equalTo: safeArea.trailingAnchor,
-                constant: view.frame.width * -0.1
-            ),
-            addButton.bottomAnchor.constraint(
-                equalTo: safeArea.bottomAnchor,
-                constant: view.frame.height * -0.1
-            ),
             tableView.leadingAnchor.constraint(
                 equalTo: safeArea.leadingAnchor,
                 constant: view.frame.width * 0.03
@@ -111,8 +93,14 @@ extension ListViewController {
                 equalTo: safeArea.trailingAnchor,
                 constant: view.frame.width * -0.03
             ),
-            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+            tableView.topAnchor.constraint(
+                equalTo: safeArea.topAnchor,
+                constant: view.frame.height * 0.02
+            ),
+            tableView.bottomAnchor.constraint(
+                equalTo: safeArea.bottomAnchor,
+                constant: view.frame.height * -0.02
+            )
         ])
     }
 }
