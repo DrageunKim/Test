@@ -24,6 +24,10 @@
 		D031DB1D299E9974007BCD71 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB1C299E9974007BCD71 /* RecordViewController.swift */; };
 		D031DB1F299E998D007BCD71 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB1E299E998D007BCD71 /* CommunityViewController.swift */; };
 		D031DB21299E999D007BCD71 /* ETCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB20299E999D007BCD71 /* ETCViewController.swift */; };
+		D031DB27299F2C40007BCD71 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB26299F2C40007BCD71 /* RecordViewModel.swift */; };
+		D031DB29299F2C4B007BCD71 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB28299F2C4B007BCD71 /* CommunityViewModel.swift */; };
+		D031DB2B299F2C54007BCD71 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB2A299F2C54007BCD71 /* ChatViewModel.swift */; };
+		D031DB2D299F2C5E007BCD71 /* ETCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB2C299F2C5E007BCD71 /* ETCViewModel.swift */; };
 		D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365842299B7A54003B8D30 /* AppDelegate.swift */; };
 		D0365845299B7A54003B8D30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365844299B7A54003B8D30 /* SceneDelegate.swift */; };
 		D0365847299B7A54003B8D30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365846299B7A54003B8D30 /* LoginViewController.swift */; };
@@ -73,6 +77,10 @@
 		D031DB1C299E9974007BCD71 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		D031DB1E299E998D007BCD71 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		D031DB20299E999D007BCD71 /* ETCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCViewController.swift; sourceTree = "<group>"; };
+		D031DB26299F2C40007BCD71 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		D031DB28299F2C4B007BCD71 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
+		D031DB2A299F2C54007BCD71 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		D031DB2C299F2C5E007BCD71 /* ETCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCViewModel.swift; sourceTree = "<group>"; };
 		D036583F299B7A54003B8D30 /* GoodRestaurantNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodRestaurantNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0365842299B7A54003B8D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0365844299B7A54003B8D30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 		D031DB0C299E9756007BCD71 /* ETC */ = {
 			isa = PBXGroup;
 			children = (
+				D031DB25299F2C1E007BCD71 /* ViewModel */,
 				D031DB20299E999D007BCD71 /* ETCViewController.swift */,
 				D031DB18299E991A007BCD71 /* ETCTableViewCell.swift */,
 			);
@@ -186,6 +195,7 @@
 		D031DB0D299E9768007BCD71 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				D031DB22299F2C0C007BCD71 /* ViewModel */,
 				D031DB1C299E9974007BCD71 /* RecordViewController.swift */,
 				D031DB14299E9903007BCD71 /* RecordTableViewCell.swift */,
 			);
@@ -195,6 +205,7 @@
 		D031DB0E299E9799007BCD71 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				D031DB24299F2C18007BCD71 /* ViewModel */,
 				D031DB0F299E9866007BCD71 /* ChatViewController.swift */,
 				D031DB12299E98DF007BCD71 /* ChatTableViewCell.swift */,
 			);
@@ -204,10 +215,43 @@
 		D031DB11299E9876007BCD71 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				D031DB23299F2C13007BCD71 /* ViewModel */,
 				D031DB1E299E998D007BCD71 /* CommunityViewController.swift */,
 				D031DB16299E9911007BCD71 /* CommunityTableViewCell.swift */,
 			);
 			path = Community;
+			sourceTree = "<group>";
+		};
+		D031DB22299F2C0C007BCD71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB26299F2C40007BCD71 /* RecordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D031DB23299F2C13007BCD71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB28299F2C4B007BCD71 /* CommunityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D031DB24299F2C18007BCD71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB2A299F2C54007BCD71 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D031DB25299F2C1E007BCD71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D031DB2C299F2C5E007BCD71 /* ETCViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D0365836299B7A54003B8D30 = {
@@ -403,10 +447,14 @@
 				D031DACE299DEAAE007BCD71 /* ListViewController.swift in Sources */,
 				D031DAD6299DF761007BCD71 /* Score.swift in Sources */,
 				D031DB1D299E9974007BCD71 /* RecordViewController.swift in Sources */,
+				D031DB27299F2C40007BCD71 /* RecordViewModel.swift in Sources */,
+				D031DB2D299F2C5E007BCD71 /* ETCViewModel.swift in Sources */,
 				D031DB15299E9903007BCD71 /* RecordTableViewCell.swift in Sources */,
 				D031DB1F299E998D007BCD71 /* CommunityViewController.swift in Sources */,
+				D031DB2B299F2C54007BCD71 /* ChatViewModel.swift in Sources */,
 				D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */,
 				D031DAD2299DEBEE007BCD71 /* Identifiable.swift in Sources */,
+				D031DB29299F2C4B007BCD71 /* CommunityViewModel.swift in Sources */,
 				D0365895299CAEC2003B8D30 /* LoginViewModel.swift in Sources */,
 				D031DB19299E991A007BCD71 /* ETCTableViewCell.swift in Sources */,
 				D0365845299B7A54003B8D30 /* SceneDelegate.swift in Sources */,

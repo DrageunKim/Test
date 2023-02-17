@@ -5,7 +5,7 @@
 //  Created by yonggeun Kim on 2023/02/16.
 //
 
-import UIKit
+import Foundation
 
 class ListViewModel {
     
