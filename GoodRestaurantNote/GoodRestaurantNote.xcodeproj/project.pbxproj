@@ -10,7 +10,7 @@
 		D031DACE299DEAAE007BCD71 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DACD299DEAAE007BCD71 /* ListViewController.swift */; };
 		D031DAD0299DEB93007BCD71 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DACF299DEB93007BCD71 /* ListTableViewCell.swift */; };
 		D031DAD2299DEBEE007BCD71 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD1299DEBEE007BCD71 /* Identifiable.swift */; };
-		D031DAD4299DEF4D007BCD71 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD3299DEF4D007BCD71 /* Restaurant.swift */; };
+		D031DAD4299DEF4D007BCD71 /* MatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD3299DEF4D007BCD71 /* MatchInfo.swift */; };
 		D031DAD6299DF761007BCD71 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD5299DF761007BCD71 /* Score.swift */; };
 		D031DAD9299DFE0E007BCD71 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DAD8299DFE0E007BCD71 /* ListViewModel.swift */; };
 		D031DADE299E2550007BCD71 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DADD299E2550007BCD71 /* DetailViewController.swift */; };
@@ -28,6 +28,9 @@
 		D031DB29299F2C4B007BCD71 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB28299F2C4B007BCD71 /* CommunityViewModel.swift */; };
 		D031DB2B299F2C54007BCD71 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB2A299F2C54007BCD71 /* ChatViewModel.swift */; };
 		D031DB2D299F2C5E007BCD71 /* ETCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB2C299F2C5E007BCD71 /* ETCViewModel.swift */; };
+		D031DB2F299F4286007BCD71 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB2E299F4286007BCD71 /* DetailViewModel.swift */; };
+		D031DB31299F4319007BCD71 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB30299F4319007BCD71 /* Image.swift */; };
+		D031DB33299F4436007BCD71 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031DB32299F4436007BCD71 /* DetailCollectionViewCell.swift */; };
 		D0365843299B7A54003B8D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365842299B7A54003B8D30 /* AppDelegate.swift */; };
 		D0365845299B7A54003B8D30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365844299B7A54003B8D30 /* SceneDelegate.swift */; };
 		D0365847299B7A54003B8D30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0365846299B7A54003B8D30 /* LoginViewController.swift */; };
@@ -63,7 +66,7 @@
 		D031DACD299DEAAE007BCD71 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D031DACF299DEB93007BCD71 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		D031DAD1299DEBEE007BCD71 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
-		D031DAD3299DEF4D007BCD71 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		D031DAD3299DEF4D007BCD71 /* MatchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfo.swift; sourceTree = "<group>"; };
 		D031DAD5299DF761007BCD71 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		D031DAD8299DFE0E007BCD71 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D031DADD299E2550007BCD71 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +84,9 @@
 		D031DB28299F2C4B007BCD71 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
 		D031DB2A299F2C54007BCD71 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		D031DB2C299F2C5E007BCD71 /* ETCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETCViewModel.swift; sourceTree = "<group>"; };
+		D031DB2E299F4286007BCD71 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D031DB30299F4319007BCD71 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D031DB32299F4436007BCD71 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		D036583F299B7A54003B8D30 /* GoodRestaurantNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodRestaurantNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0365842299B7A54003B8D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0365844299B7A54003B8D30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 			children = (
 				D031DAE0299E27FB007BCD71 /* ViewModel */,
 				D031DADD299E2550007BCD71 /* DetailViewController.swift */,
+				D031DB32299F4436007BCD71 /* DetailCollectionViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -165,6 +172,7 @@
 		D031DAE0299E27FB007BCD71 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D031DB2E299F4286007BCD71 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,9 +322,10 @@
 			isa = PBXGroup;
 			children = (
 				D031DAD1299DEBEE007BCD71 /* Identifiable.swift */,
-				D031DAD3299DEF4D007BCD71 /* Restaurant.swift */,
+				D031DAD3299DEF4D007BCD71 /* MatchInfo.swift */,
 				D031DAD5299DF761007BCD71 /* Score.swift */,
 				D031DAE1299E3A64007BCD71 /* Mode.swift */,
+				D031DB30299F4319007BCD71 /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,14 +450,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D031DAD0299DEB93007BCD71 /* ListTableViewCell.swift in Sources */,
+				D031DB31299F4319007BCD71 /* Image.swift in Sources */,
 				D0365847299B7A54003B8D30 /* LoginViewController.swift in Sources */,
 				D031DAE2299E3A64007BCD71 /* Mode.swift in Sources */,
 				D031DADE299E2550007BCD71 /* DetailViewController.swift in Sources */,
 				D031DACE299DEAAE007BCD71 /* ListViewController.swift in Sources */,
 				D031DAD6299DF761007BCD71 /* Score.swift in Sources */,
+				D031DB33299F4436007BCD71 /* DetailCollectionViewCell.swift in Sources */,
 				D031DB1D299E9974007BCD71 /* RecordViewController.swift in Sources */,
 				D031DB27299F2C40007BCD71 /* RecordViewModel.swift in Sources */,
 				D031DB2D299F2C5E007BCD71 /* ETCViewModel.swift in Sources */,
+				D031DB2F299F4286007BCD71 /* DetailViewModel.swift in Sources */,
 				D031DB15299E9903007BCD71 /* RecordTableViewCell.swift in Sources */,
 				D031DB1F299E998D007BCD71 /* CommunityViewController.swift in Sources */,
 				D031DB2B299F2C54007BCD71 /* ChatViewModel.swift in Sources */,
@@ -463,7 +475,7 @@
 				D031DB21299E999D007BCD71 /* ETCViewController.swift in Sources */,
 				D031DB0B299E9171007BCD71 /* CustomTabBarController.swift in Sources */,
 				D031DB13299E98DF007BCD71 /* ChatTableViewCell.swift in Sources */,
-				D031DAD4299DEF4D007BCD71 /* Restaurant.swift in Sources */,
+				D031DAD4299DEF4D007BCD71 /* MatchInfo.swift in Sources */,
 				D031DAD9299DFE0E007BCD71 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

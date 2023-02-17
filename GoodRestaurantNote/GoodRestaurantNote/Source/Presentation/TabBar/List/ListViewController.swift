@@ -64,7 +64,7 @@ extension ListViewController {
     private func tappedAddButton() {
         let pushViewController = DetailViewController(mode: .create)
         
-        navigationController?.pushViewController(pushViewController, animated: true)
+        navigationController?.present(pushViewController, animated: true)
     }
 }
 

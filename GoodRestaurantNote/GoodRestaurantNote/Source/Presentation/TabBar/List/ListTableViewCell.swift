@@ -9,7 +9,13 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
     
-    private let scoreLabel: UILabel = {
+    private let infoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = .add
+        return imageView
+    }()
+    private let eventLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
         return label
@@ -19,12 +25,7 @@ class ListTableViewCell: UITableViewCell {
         label.textColor = .label
         return label
     }()
-    private let visitLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .label
-        return label
-    }()
-    private let menuLabel: UILabel = {
+    private let dateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
         return label
@@ -34,7 +35,7 @@ class ListTableViewCell: UITableViewCell {
         label.textColor = .label
         return label
     }()
-    private let topStackView: UIStackView = {
+    private let locationDateStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .leading
         stackView.axis = .horizontal
@@ -64,18 +65,18 @@ class ListTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        scoreLabel.text = nil
+//        imageView.image = nil
+        eventLabel.text = nil
         titleLabel.text = nil
-        visitLabel.text = nil
-        menuLabel.text = nil
+        dateLabel.text = nil
         locationLabel.text = nil
     }
     
-    func configureLabel(data: Restaurant) {
-        scoreLabel.text = data.score.description
+    func configureLabel(data: MatchInfo) {
+//        infoImageView.image = data.images[index]
         titleLabel.text = data.title
-        visitLabel.text = data.visitDate.description
-        menuLabel.text = data.menu.description
+        eventLabel.text = data.event
+        dateLabel.text = data.date.description
         locationLabel.text = data.location
     }
     
@@ -86,25 +87,53 @@ class ListTableViewCell: UITableViewCell {
     }
     
     private func configureStackView() {
-        topStackView.addArrangedSubview(scoreLabel)
-        topStackView.addArrangedSubview(titleLabel)
-        topStackView.addArrangedSubview(visitLabel)
+        locationDateStackView.addArrangedSubview(locationLabel)
+        locationDateStackView.addArrangedSubview(dateLabel)
         
-        totalStackView.addArrangedSubview(topStackView)
-        totalStackView.addArrangedSubview(menuLabel)
-        totalStackView.addArrangedSubview(locationLabel)
+        totalStackView.addArrangedSubview(eventLabel)
+        totalStackView.addArrangedSubview(titleLabel)
+        totalStackView.addArrangedSubview(locationDateStackView)
     }
     
     private func configureLayout() {
         configureStackView()
         
+        contentView.addSubview(infoImageView)
         contentView.addSubview(totalStackView)
         
         NSLayoutConstraint.activate([
-            totalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: contentView.frame.width * 0.07),
-            totalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: contentView.frame.width * -0.07),
-            totalStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            totalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            infoImageView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: contentView.frame.width * 0.03
+            ),
+            infoImageView.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: contentView.frame.height * 0.02
+            ),
+            infoImageView.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: contentView.frame.height * -0.02
+            ),
+            infoImageView.widthAnchor.constraint(
+                equalTo: infoImageView.heightAnchor
+            ),
+            
+            totalStackView.leadingAnchor.constraint(
+                equalTo: infoImageView.trailingAnchor,
+                constant: contentView.frame.width * 0.03
+            ),
+            totalStackView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: contentView.frame.width * -0.05
+            ),
+            totalStackView.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: contentView.frame.height * 0.1
+            ),
+            totalStackView.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: contentView.frame.height * -0.1
+            )
         ])
     }
 }

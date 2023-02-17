@@ -9,14 +9,12 @@ import Foundation
 
 class ListViewModel {
     
-    var dataList: [Restaurant] = [Restaurant(
-        visitDate: Date(),
-        visitRecord: [Date()],
-        title: "123",
-        body: "321",
-        location: "123",
-        score: 2,
-        menu: ["123"],
-        menuScore: [2]
+    var dataList: [MatchInfo] = [MatchInfo(
+        event: "축구",
+        title: "공원 매치구함",
+        body: "저녁 8시 11대11",
+        date: Date(),
+        location: "공원",
+        images: .init()
     )]
 }

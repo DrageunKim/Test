@@ -7,13 +7,11 @@
 
 import Foundation
 
-struct Restaurant: Hashable {
-    let visitDate: Date
-    let visitRecord: [Date]
+struct MatchInfo {
+    let event: String
     let title: String
     let body: String
+    let date: Date
     let location: String
-    let score: Int
-    let menu: [String]
-    let menuScore: [Int]
+    let images: [Image]
 }
