@@ -54,6 +54,9 @@ class CustomTabBarController: UITabBarController {
     private func configureTabBar() {
         tabBar.tintColor = .systemMint
         tabBar.unselectedItemTintColor = .label
+        tabBar.layer.borderWidth = 0.1
+        tabBar.layer.borderColor = UIColor.label.cgColor
+        tabBar.layer.cornerRadius = 10
         
         viewControllers = [
             homeViewController,

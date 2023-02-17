@@ -21,3 +21,5 @@ class RecordTableViewCell: UITableViewCell {
     }
 
 }
+
+extension RecordTableViewCell: Identifiable {}

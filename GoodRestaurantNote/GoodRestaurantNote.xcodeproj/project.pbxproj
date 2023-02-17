@@ -121,10 +121,10 @@
 		D031DACC299DEA8F007BCD71 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D031DADC299E251B007BCD71 /* Detail */,
 				D031DAD7299DFDFD007BCD71 /* ViewModel */,
 				D031DACD299DEAAE007BCD71 /* ListViewController.swift */,
 				D031DACF299DEB93007BCD71 /* ListTableViewCell.swift */,
+				D031DADC299E251B007BCD71 /* Detail */,
 			);
 			path = List;
 			sourceTree = "<group>";

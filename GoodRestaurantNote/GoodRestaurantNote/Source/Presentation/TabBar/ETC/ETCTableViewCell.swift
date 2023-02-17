@@ -21,3 +21,5 @@ class ETCTableViewCell: UITableViewCell {
     }
 
 }
+
+extension ETCTableViewCell: Identifiable {}

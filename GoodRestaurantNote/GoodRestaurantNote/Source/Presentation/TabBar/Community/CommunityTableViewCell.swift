@@ -21,3 +21,5 @@ class CommunityTableViewCell: UITableViewCell {
     }
 
 }
+
+extension CommunityTableViewCell: Identifiable {}

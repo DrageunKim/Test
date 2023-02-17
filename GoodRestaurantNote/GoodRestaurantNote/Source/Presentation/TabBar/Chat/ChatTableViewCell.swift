@@ -21,3 +21,5 @@ class ChatTableViewCell: UITableViewCell {
     }
 
 }
+
+extension ChatTableViewCell: Identifiable {}
